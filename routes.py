@@ -60,3 +60,7 @@ async def get_job_status(status: str = None):
     return list(jobs.values())
     
 
+@router.get('/jobs/{id}')
+async def get_job_id(job_id: str):
+    filtred_by_id_jobs = [job for job in jobs.values() if job['job_id'] == job_id]
+    return filtred_by_id_jobs
