@@ -62,5 +62,28 @@ async def get_job_status(status: str = None):
 
 @router.get('/jobs/{id}')
 async def get_job_id(job_id: str):
+    if job_id not in jobs:
+        raise HTTPException(status_code=404, detail='Не знайдено')
+
     filtred_by_id_jobs = [job for job in jobs.values() if job['job_id'] == job_id]
     return filtred_by_id_jobs
+
+
+@router.post('/jobs/{id}/cancel')
+async def cancel_job(job_id: str):
+    job = jobs.get(job_id)
+    if not job:
+        raise HTTPException(status_code=404, detail='Не знайдено')
+
+    if job['status'] not in ['queued', 'printing']:
+        raise HTTPException(status_code=409, detail='Стан не дозволяє')
+
+    job['status'] = 'canceled'
+    job['updated_at'] = datetime.utcnow() 
+
+    return job
+
+    
+    
+
+
