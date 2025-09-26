@@ -15,3 +15,4 @@ class JobResponse(BaseModel):
     updated_at: datetime
 
 
+jobs = dict()
