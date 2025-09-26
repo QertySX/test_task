@@ -1,0 +1,46 @@
+# Виртуальное окружение
+venv/
+.venv/
+env/
+ENV/
+
+# Кеши Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Кеши/логи
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+
+# Jupyter / IPython
+.ipynb_checkpoints
+
+# IDE
+.vscode/
+.idea/
+
+# Тестовые и временные файлы
+.coverage
+*.cover
+*.db
+*.sqlite3
+*.pid
+*.seed
+*.tmp
+*.swp
+
+# OS файлы
+.DS_Store
+Thumbs.db
+
+# PyInstaller
+build/
+dist/
+*.spec
+
+# pipenv / poetry
+*.lock
