@@ -20,6 +20,10 @@
 - python -m venv venv
 - venv\Scripts\activate 
 
+Встановлення залежностей
+
+- pip install -r requirements.txt
+
 Сервер буде доступний за адресою http://127.0.0.1:8000
 Документація Swagger: http://127.0.0.1:8000/docs
 
